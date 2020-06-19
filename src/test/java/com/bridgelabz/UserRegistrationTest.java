@@ -31,4 +31,18 @@ public class UserRegistrationTest {
         boolean isValid = userRegistration.validateLastName("vegi");
         Assert.assertTrue(isValid);
     }
+
+    @Test
+    public void givenEmail_whenProper_shouldReturn_True() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean isValid = userRegistration.validateEmail("abc.xyz@bl.co.in");
+        Assert.assertTrue(isValid);
+    }
+
+    @Test
+    public void givenEmail_whenProper_shouldReturn_True_test2() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean isValid = userRegistration.validateEmail("abc@bl.co");
+        Assert.assertTrue(isValid);
+    }
 }
