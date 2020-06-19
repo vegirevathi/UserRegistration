@@ -56,7 +56,14 @@ public class UserRegistrationTest {
     @Test
     public void givenPassWord_Rule1_whenProper_sholudReturn_True() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean isValid = userRegistration.validatePasswordRule1("msedf1234");
+        boolean isValid = userRegistration.validatePasswordRule2("msedf1234");
+        Assert.assertTrue(isValid);
+    }
+
+    @Test
+    public void givenPassword_rule2_whenProper_shouldReturn_True() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean isValid = userRegistration.validatePasswordRule2("Asdf1234");
         Assert.assertTrue(isValid);
     }
 }
