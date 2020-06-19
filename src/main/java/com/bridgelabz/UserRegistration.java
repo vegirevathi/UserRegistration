@@ -10,8 +10,7 @@ public class UserRegistration {
     private static final String EMAIL_REGEX_3 = "^([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,})$";
     private static final String EMAIL_REGEX_4 = "^([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,}+)\\.([A-Za-z]{2,})$";
     private static final String PHONE_NUMBER_REGEX = "^([1-9]{2}+)[: :]([0-9]{10})$";
-    private static final String PASSWORD_RULE1_REGEX = "^([a-zA-Z0-9_\\-\\.]{8,})";
-    private static final String PASSWORD_RULE2_REGEX = "^(?=.*?[A-Z])([A-Za-z0-9]{8,})$";
+    private static final String PASSWORD_REGEX = "^(?=.*?[A-Z])([A-Za-z0-9]{8,})$";
 
     public boolean validateFirstName(String firstName) {
         Pattern pattern = Pattern.compile(FIRST_NAME_REGEX);
@@ -39,14 +38,8 @@ public class UserRegistration {
         return pattern.matcher(phoneNumber).matches();
     }
 
-
-    public boolean validatePasswordRule1(String passwordRule1) {
-        Pattern pattern = Pattern.compile(PASSWORD_RULE1_REGEX);
-        return pattern.matcher(passwordRule1).matches();
-    }
-
-    public boolean validatePasswordRule2(String passwordRule2) {
-        Pattern pattern = Pattern.compile(PASSWORD_RULE2_REGEX);
-        return pattern.matcher(passwordRule2).matches();
+    public boolean validatePasswordRule(String password) {
+        Pattern pattern = Pattern.compile(PASSWORD_REGEX);
+        return pattern.matcher(password).matches();
     }
 }
