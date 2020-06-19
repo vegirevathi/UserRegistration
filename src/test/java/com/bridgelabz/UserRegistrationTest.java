@@ -67,4 +67,10 @@ public class UserRegistrationTest {
         Assert.assertTrue(isValid);
     }
 
+    @Test
+    public void givenPassword_whenProper_shouldReturn_True_test3() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean isValid = userRegistration.validatePasswordRule("asdfASD1@");
+        Assert.assertTrue(isValid);
+    }
 }
