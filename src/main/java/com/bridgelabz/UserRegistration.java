@@ -27,10 +27,12 @@ public class UserRegistration {
         Pattern pattern1 = Pattern.compile(EMAIL_REGEX_2);
         Pattern pattern2 = Pattern.compile(EMAIL_REGEX_3);
         Pattern pattern3 = Pattern.compile(EMAIL_REGEX_4);
+        boolean result;
         if (pattern.matcher(email).matches() || pattern1.matcher(email).matches() || pattern2.matcher(email).matches() || pattern3.matcher(email).matches() )
-            return true;
+            result=true;
         else
-            return false;
+            result=false;
+        return result;
     }
 
     public boolean validatePhoneNUmber(String phoneNumber) {
